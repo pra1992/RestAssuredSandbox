@@ -69,7 +69,7 @@ Examples:
 |Payload2.json|
 
 @RunTest
-Scenario Outline: TC004 partially upfdate Request with multiple request body as files
+Scenario Outline: TC004 partially update Request with multiple request body as files
 Given Set the endpoint for the Sandbox Environment
 And Set the authentication for application
 And Set the Queryparam for create request
@@ -86,6 +86,27 @@ Examples:
 |File_Name|
 |Payload1.json|
 |Payload2.json|
+
+
+Scenario  Outline: Create a POST Request with headers as parameters
+Given Set the endpoint for the Sandbox Environment
+And Set the authentication for application
+And Set the Queryparam for create request
+|JsonKeyNames|JsonKeyValue|
+|SwaggerFilterCriteria|Key1, Key2, key3|
+And Set the Content Type in the Create Request
+And Set the Accept in the Create Request
+And Set the Request Body as <File_Name> in the Create Request
+When Send the POST Request to the Sandbox Environment
+Then Validate the Status Code as 201
+And Validate the value for the response "Key"
+
+Examples:
+|File_Name|
+|Payload1.json|
+|Payload2.json|
+
+
 
 
 

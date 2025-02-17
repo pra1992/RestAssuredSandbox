@@ -19,8 +19,6 @@ public class CreateRequestSteps {
 	
 	static RequestSpecification requestSpecification= null;
 	static Response response = null;
-	private Map<String, String> queryParams = new HashMap<String, String>();
-
 	
 	@Given("Set the endpoint for the Sandbox Environment")
 	public void setEndPoint() {
