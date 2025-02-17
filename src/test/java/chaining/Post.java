@@ -18,7 +18,7 @@ public class Post extends  BaseRest {
 		query.put("Key", "Value");
 		query.put("Swagger Filter criteria", "Key1, Key2, Key3");
 		File inputJson = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Payload.json");
-		response = RestAssured.given().contentType(ContentType.JSON).accept(ContentType.JSON).queryParams(query).body(inputJson).when().post(PathParameter);
+		response = requestSpecification.contentType(ContentType.JSON).accept(ContentType.JSON).queryParams(query).body(inputJson).when().post(PathParameter);
 		PathParameter = response.jsonPath().get("responseobject.keyname");//means "response object.keyname, sends the path of the json key to be called"	
 	}
 

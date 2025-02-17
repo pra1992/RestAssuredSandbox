@@ -10,7 +10,7 @@ public class DELETE extends BaseRest {
 	
 	@Test(dependsOnMethods = "chaining.PUT.sendPutRequest")
 	public void deleteRequest() {
-		response = RestAssured.when().delete(PathParameter);
+		response = requestSpecification.when().delete(PathParameter);
 	}
 
 }

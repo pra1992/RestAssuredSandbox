@@ -20,7 +20,7 @@ public class Patch extends BaseRest {
 		q.put("jsonkey", "value");
 		q.put("swagger filter criteria", "key1, key2, key3");
 		File inputJson = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Payload.json");
-		response = RestAssured.given().log().all().contentType(ContentType.JSON).accept(ContentType.JSON).queryParams(q).body(inputJson).when().patch(PathParameter);
+		response = requestSpecification.contentType(ContentType.JSON).accept(ContentType.JSON).queryParams(q).body(inputJson).when().patch(PathParameter);
 			
 	}
 	

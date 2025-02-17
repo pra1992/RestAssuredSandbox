@@ -17,7 +17,7 @@ public class SimpleGetRequestWithQueryParam extends BaseRest{
 		Map<String, String> query = new HashMap<String,String>();
 		query.put("Key", "Value");
 		query.put("Swagger Filter criteria", "Key1, Key2, Key3");
-	     response = RestAssured.given().accept(ContentType.JSON).when().get();
+	     response = requestSpecification.accept(ContentType.JSON).when().get();
          List<Object> list = response.jsonPath().getList("results." + PathParameter);
          System.out.println(list);
     

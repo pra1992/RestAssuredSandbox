@@ -20,7 +20,7 @@ public class PUT extends BaseRest{
 		q.put("swagger filter", "key1, key2, key3");
 		File inputJson = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Payload.json");
 		//for both POST and PUT Calls, we can have the Path parameter as per documentation, and we need to pass along with action
-		response = RestAssured.given().contentType(ContentType.JSON).accept(ContentType.JSON).queryParams(q).body(inputJson).when().put(PathParameter);
+		response = requestSpecification.contentType(ContentType.JSON).accept(ContentType.JSON).queryParams(q).body(inputJson).when().put(PathParameter);
 		//w.r.t service now, PUT and PATCH are same implementation except we need to replace PUT with PATCH
 		
 	}

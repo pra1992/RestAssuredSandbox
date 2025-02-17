@@ -18,7 +18,7 @@ public class BaseRest {
 	public void beforeRun() {
 		RestAssured.baseURI = "https://jsonplaceholder.typicode.com/posts";
 		RestAssured.authentication = RestAssured.basic("admin", "Welcome@123");
-		RequestSpecification all = RestAssured.given().log().all();		
+		requestSpecification = RestAssured.given().log().all();		
 	}
 	
 	@AfterMethod
