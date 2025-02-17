@@ -2,6 +2,7 @@ package chaining;
 
 import org.hamcrest.Matchers;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 import io.restassured.RestAssured;
@@ -14,7 +15,7 @@ public class BaseRest {
 	static Response response = null;
 	static String PathParameter = null;
 	
-	@BeforeSuite
+	@BeforeMethod
 	public void beforeRun() {
 		RestAssured.baseURI = "https://jsonplaceholder.typicode.com/posts";
 		RestAssured.authentication = RestAssured.basic("admin", "Welcome@123");
