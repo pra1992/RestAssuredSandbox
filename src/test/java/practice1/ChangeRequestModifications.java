@@ -22,7 +22,7 @@ public class ChangeRequestModifications {
 	@Test(priority = 2)
 	public void deleteRequest() {
 		RestAssured.baseURI="";
-		RestAssured.authentication="";
+		RestAssured.authentication=RestAssured.basic("username", "password");
 		Response delete = RestAssured.when().delete("pathparameter");
 		System.out.println(delete.statusCode());
 		
