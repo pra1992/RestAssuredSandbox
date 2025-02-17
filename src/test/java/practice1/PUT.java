@@ -25,6 +25,6 @@ public class PUT {
 		System.out.println(put.prettyPrint());
 		System.out.println(put.statusCode());
 		//w.r.t service now, PUT and PATCH are same implementation except we need to replace PUT with PATCH
-		
+	    RestAssured.	
 	}
 }
