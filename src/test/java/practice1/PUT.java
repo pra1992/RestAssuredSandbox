@@ -24,7 +24,6 @@ public class PUT {
 		Response put = RestAssured.given().contentType(ContentType.JSON).accept(ContentType.JSON).queryParams(q).body(inputJson).when().put("jsonkey");
 		System.out.println(put.prettyPrint());
 		System.out.println(put.statusCode());
-		//w.r.t service now, PUT and PATCH are same implementation except we need to replace PUT with PATCH
-	    RestAssured.	
+		//w.r.t service now, PUT and PATCH are same implementation except we need to replace PUT with PATCH	
 	}
 }
