@@ -42,7 +42,9 @@ And Set the Content Type in the Create Request
 And Set the Accept in the Create Request
 When Send the POST Request to the Sandbox Environment
 Then Validate the Status Code as 200
-And Validate the value for the response "Key"
+And Validate the GET Response contains the fields with values
+|Field1|Value1|
+|Field2|Value2|
 
 Examples:
 |File_Name|
@@ -88,7 +90,7 @@ Examples:
 |Payload2.json|
 
 
-Scenario  Outline: Create a POST Request with headers as parameters
+Scenario Outline: Create a POST Request with headers as parameters
 Given Set the endpoint for the Sandbox Environment
 And Set the authentication for application
 And Set the Queryparam for create request
@@ -96,6 +98,9 @@ And Set the Queryparam for create request
 |SwaggerFilterCriteria|Key1, Key2, key3|
 And Set the Content Type in the Create Request
 And Set the Accept in the Create Request
+And Set the following Headers in the Input Request
+|Content-Type|application/json|
+|Accept|application/json|
 And Set the Request Body as <File_Name> in the Create Request
 When Send the POST Request to the Sandbox Environment
 Then Validate the Status Code as 201
